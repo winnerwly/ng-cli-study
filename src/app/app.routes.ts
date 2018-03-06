@@ -18,7 +18,7 @@ const appRoutes:Routes = [
     component: UserComponent
   },
   {
-    path: 'admin',
+    path: 'admin/:id',
     component: AdminComponent
   }
 ];

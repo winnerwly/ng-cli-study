@@ -1,3 +1,9 @@
-<p>
-  admin works!
-</p>
+<h1 class="page-herder">这是一个简单的admin页面</h1>
+<div class="form-group">
+  <label class="col-form-label" for="inputDefault">name</label>
+  <input type="text" class="form-control" [(ngModel)]='name' placeholder="fill your name" name='text'>
+</div>
+<h1>{{name}}</h1>
+<p>{{aaa}}</p>
+<p>id: {{id}}</p>
+<app-modal (change)='countChange($event)' [name]='name' title='点击查看' modalTitle='一些简单的信息'></app-modal>
