@@ -1,0 +1,40 @@
+<div class="user">
+  <form>
+    <div class="form-group">
+      <label for="name">姓名</label>
+      <input [(ngModel)]='form.name' type="text" class="form-control" id="name" name='name' placeholder="请输入您的姓名">
+    </div>
+    <div class="form-group">
+      <label for="phone">联系方式</label>
+      <input type="text" [(ngModel)]='form.phone' class="form-control" id="phone" name="phone" placeholder="请输入您的联系方式">
+    </div>
+    <button type="button" (click)=add(form) class="btn btn-success">添加</button>
+  </form>
+
+  <div class="userinfo" *ngIf='userInfo.length > 0'>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>姓名</th>
+          <th>联系方式</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let item of userInfo'>
+          <th scope="row">{{userInfo.indexOf(item)+1}}</th>
+          <td>{{item.name}}</td>
+          <td>{{item.phone}}</td>
+          <td><button class="btn btn-info" (click)='updata(userInfo.indexOf(item),item)'>修改</button><button class="btn btn-danger" (click)='del(userInfo.indexOf(item))'>删除</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<style>
+.user, .userinfo {
+  margin-top: 30px;
+}
+</style>
