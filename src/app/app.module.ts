@@ -10,6 +10,9 @@ import { AdminComponent } from './admin/admin.component';
 import { routing } from"./app.routes";
 import { NavComponent } from './nav/nav.component';
 import { ModalComponent } from './component/modal/modal.component';
+import { HttpComponent } from './http/http.component';
+
+import { HttpService } from './http/http.service'
 
 @NgModule({
   declarations: [
@@ -18,7 +21,8 @@ import { ModalComponent } from './component/modal/modal.component';
     UserComponent,
     AdminComponent,
     NavComponent,
-    ModalComponent
+    ModalComponent,
+    HttpComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +30,7 @@ import { ModalComponent } from './component/modal/modal.component';
     HttpModule,
     routing
   ],
-  providers: [],
+  providers: [HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

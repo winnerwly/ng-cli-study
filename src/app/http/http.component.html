@@ -1,0 +1,25 @@
+<div class="jumbotron http">
+  <h1 class="page-herder">这是一个很简单的HTTP测试页面</h1>
+  <hr>
+  <button class="btn btn-success" (click)='httpClick()'>获取数据</button>
+</div>
+
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">name</th>
+      <th scope="col">mobile</th>
+      <th scope="col">createTime</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="table-Default"  *ngFor='let item of obj'>
+      <td>{{item.id}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.mobile}}</td>
+      <td>{{item.createtime}}</td>
+    </tr>
+  </tbody>
+</table>
