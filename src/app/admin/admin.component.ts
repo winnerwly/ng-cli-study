@@ -18,7 +18,7 @@ export class AdminComponent implements OnInit {
   ngOnInit() {
     console.log(this.location)
     console.log(this.router)
-    // console.log(this.id = this.router.url.slice(7))
+    console.log(this.router)
   }
   countChange($event) {
     if($event && $event.type) {
