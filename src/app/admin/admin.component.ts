@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -9,14 +9,16 @@ import { Router } from '@angular/router';
 })
 export class AdminComponent implements OnInit {
 
-  constructor(private location: Location,private router: Router) { }
+  constructor(private location: Location,private router: Router,private routers:ActivatedRoute) {
+    this.id = routers.snapshot.params['id']
+  }
   name:string;
   aaa:string;
   id:string;
   ngOnInit() {
     console.log(this.location)
     console.log(this.router)
-    console.log(this.id = this.router.url.slice(7))
+    // console.log(this.id = this.router.url.slice(7))
   }
   countChange($event) {
     if($event && $event.type) {
