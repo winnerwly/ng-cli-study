@@ -13,6 +13,10 @@ import { ModalComponent } from './component/modal/modal.component';
 import { HttpComponent } from './http/http.component';
 
 import { HttpService } from './http/http.service'
+import { DataService } from './services/data.service';
+import { QuestionComponent } from './question/question.component';
+import { AddqComponent } from './question/addq/addq.component';
+import { ListqComponent } from './question/listq/listq.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,10 @@ import { HttpService } from './http/http.service'
     AdminComponent,
     NavComponent,
     ModalComponent,
-    HttpComponent
+    HttpComponent,
+    QuestionComponent,
+    AddqComponent,
+    ListqComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +37,10 @@ import { HttpService } from './http/http.service'
     HttpModule,
     routing
   ],
-  providers: [HttpService],
+  providers: [
+    HttpService,
+    DataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

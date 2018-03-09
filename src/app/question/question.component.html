@@ -1,0 +1,37 @@
+<div class="container">
+	<div class="card">
+		<div class="card-header">
+			添加问题
+		</div>
+		<div class="card-block">
+			<form (submit)="addQuestion()">
+				<div class="form-group">
+					<label for="text">问题</label>
+					<input type="text" class="form-control" [(ngModel)]="text" name="text">
+				</div>
+
+				<div class="form-group">
+					<label for="text">答案</label>
+					<input type="text" class="form-control" [(ngModel)]="answer" name="answer">
+				</div>
+
+				<input type="submit" value="提交" class="btn btn-primary">
+			</form>
+		</div>
+	</div>
+	<br/>
+
+	<div class="question" *ngFor='let question of questions'>
+		<div class="card">
+			<div class="card-header">
+				{{ question.text }}
+				<a href="#" (click)="question.hide = !question.hide" class="btn btn-link">显示</a> | 
+				<a href="#" (click)="removeQuestion(question)" class="btn btn-link">删除</a>
+			</div>
+			<div class="card-block" [hidden]="question.hide">
+				<p class="card-text">{{ question.answer }}</p>
+			</div>
+		</div>
+		<br>
+	</div>
+</div>
